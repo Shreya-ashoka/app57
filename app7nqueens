@@ -59,3 +59,50 @@ int main() {
     NQueens(1, n);
     return 0;
 }
+Global Array x:
+
+c
+Copy code
+int x[100]; // Global array to store the positions of queens
+This global array x is used to store the positions of queens on the chessboard. Each element x[i] represents the column number in which the queen is placed in row i.
+
+Place Function:
+
+c
+Copy code
+bool Place(int k, int i) {
+    // ...
+}
+The Place function checks whether it is possible to place a queen in the k-th row and i-th column without any conflict with the existing queens. It iterates through the previously placed queens (up to k - 1) and checks for conflicts both in the same column and diagonally. If a conflict is found, it returns false; otherwise, it returns true.
+
+PrintSolution Function:
+
+c
+Copy code
+void PrintSolution(int n) {
+    // ...
+}
+The PrintSolution function is responsible for printing the current solution on the chessboard. It uses a simple loop to print 'Q' for queen positions and '.' for empty squares.
+
+NQueens Function:
+
+c
+Copy code
+void NQueens(int k, int n) {
+    // ...
+}
+The NQueens function is a recursive function that attempts to place queens on the chessboard, starting from the k-th row up to the n-th row. It iterates through all possible column positions for the queen in the current row (i), checking if it's safe to place a queen there using the Place function. If it's safe, it places the queen in that position, updates the x array, and recursively proceeds to the next row (k + 1). If k reaches n, it means all queens have been placed, and a solution is printed using PrintSolution.
+
+main Function:
+
+c
+Copy code
+int main() {
+    // ...
+}
+In the main function, the program first takes input for the size of the chessboard (n). Then, it calls the NQueens function with k initialized to 1 to start solving the N-Queens problem. The program continues to find and print all solutions.
+
+Input Validation:
+The program performs basic input validation to ensure that the value of n is a positive integer less than 100. Invalid inputs result in an error message.
+
+The code effectively uses recursion to explore all possible placements of queens on the chessboard while ensuring that no two queens can attack each other. It prints all valid solutions found. However, as mentioned earlier, the time complexity of this algorithm is exponential, so it may become impractical for large values of n.
