@@ -70,9 +70,6 @@ int main() {
 
     return 0;
 }
-ChatGPT
-This C program is an implementation of the Ford-Fulkerson algorithm for finding the maximum flow in a network. Let's break down the key components and functions in this program:
-
 Header Files (#include <stdio.h>, #include <stdbool.h>, #include <string.h>, #include <limits.h>):
 
 #include <stdio.h>: This header file is included for input and output operations.
@@ -101,22 +98,3 @@ The source (src) and sink (sink) vertices are specified.
 It calls the fordFulkerson function to find the maximum flow from the source to the sink.
 Finally, it prints the maximum flow value using printf.
 Overall, this program demonstrates the use of the Ford-Fulkerson algorithm to find the maximum flow in a network. The network is represented by the graph matrix, and the algorithm iteratively finds augmenting paths until no more can be found, ultimately determining the maximum flow from the source to the sink.
-Input:
-
-A directed graph representing the network.
-Capacities (costs) assigned to each edge in the graph.
-Source vertex (the starting point of flow).
-Sink vertex (the destination of flow).
-Output:
-
-Maximum flow from the source to the sink.
-Algorithm:
-
-Initialize the flow on all edges to zero.
-While there exists an augmenting path from the source to the sink:
-a. Use a graph traversal algorithm (e.g., BFS) to find an augmenting path in the residual graph. The residual graph is initially the same as the original graph but with reduced capacities on edges as flow is added.
-b. Determine the bottleneck capacity (minimum capacity) of the augmenting path.
-c. Update the flow on each edge in the augmenting path:
-Decrease the capacity of forward edges by the bottleneck capacity.
-Increase the capacity of backward edges (if they exist) by the bottleneck capacity.
-Return the maximum flow, which is the sum of flows leaving the source.
